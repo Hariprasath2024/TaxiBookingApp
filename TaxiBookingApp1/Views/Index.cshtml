@@ -1,0 +1,37 @@
+﻿@model IEnumerable<TaxiBookingApp1.Models.Booking>
+
+@{
+    ViewBag.Title = "Booking List";
+}
+
+<h2>Booking List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Booking ID</th>
+            <th>Customer Name</th>
+            <th>Driver Name</th>
+            <th>Pickup Location</th>
+            <th>Dropoff Location</th>
+            <th>Booking Time</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var booking in Model)
+        {
+            <tr>
+                <td>@booking.BookingID</td>
+                <td>@booking.CustomerName</td>
+                <td>@booking.DriverName</td>
+                <td>@booking.PickupLocation</td>
+                <td>@booking.DropoffLocation</td>
+                <td>@booking.BookingTime</td>
+                <td>@booking.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Booking")" class="btn btn-primary">Create New Booking</a>
